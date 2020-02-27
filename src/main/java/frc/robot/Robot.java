@@ -1,17 +1,20 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.RobotContainer;
 
 public class Robot extends TimedRobot {
-  
-    @Override
-    public void teleopPeriodic() {
-      // Drive with arcade drive.
-      // That means that the Y axis drives forward
-      // and backward, and the X turns left and right.
-      m_robotDrive.arcadeDrive(m_stick.getY(), m_stick.getX());
-    }
+
+  private RobotContainer m_robotcontainer;
+
+  @Override
+  public void robotInit() {
+    m_robotcontainer = new RobotContainer();
   }
+  @Override
+  public void robotPeriodic() {
+    CommandScheduler.getInstance().run();
+  }
+
+}
