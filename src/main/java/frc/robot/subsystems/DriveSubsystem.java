@@ -1,6 +1,5 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -10,7 +9,7 @@ public class DriveSubsystem extends SubsystemBase {
     private final SpeedController m_rightmotor;
     private final DifferentialDrive m_diffdrive;
 
-    public DriveSubsystem(PWMVictorSPX leftmotor, PWMVictorSPX rightmotor) {
+    public DriveSubsystem(SpeedController leftmotor, SpeedController rightmotor) {
         m_leftmotor = leftmotor;
         m_rightmotor = rightmotor;
         m_diffdrive = new DifferentialDrive(m_leftmotor, m_rightmotor);
