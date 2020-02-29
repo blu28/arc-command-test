@@ -8,7 +8,6 @@ import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.OIConstants;
 import frc.robot.subsystems.DriveSubsystem;
 
-
 public class RobotContainer {
 
     private final PWMVictorSPX m_leftmotor = new PWMVictorSPX(DriveConstants.kLeftMotorPort);
@@ -17,14 +16,9 @@ public class RobotContainer {
     private final Joystick m_stick = new Joystick(OIConstants.kJoystickPort);
     
     public RobotContainer() {
-        configureButtonBindings();
         m_drivesubsystem.setDefaultCommand(
             new RunCommand(() -> m_drivesubsystem
             .arcadeDrive(m_stick.getY(GenericHID.Hand.kLeft),
-            m_stick.getY(GenericHID.Hand.kLeft)), m_drivesubsystem));
-    }
-
-    private void configureButtonBindings() {
-
+            m_stick.getX(GenericHID.Hand.kLeft)), m_drivesubsystem));
     }
 }

@@ -6,15 +6,17 @@ import frc.robot.RobotContainer;
 
 public class Robot extends TimedRobot {
 
-  private RobotContainer m_robotcontainer;
-
   @Override
   public void robotInit() {
-    m_robotcontainer = new RobotContainer();
+    new RobotContainer();
   }
   @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
+  }
+  @Override
+  public void testInit() {
+    CommandScheduler.getInstance().cancelAll();
   }
 
 }
