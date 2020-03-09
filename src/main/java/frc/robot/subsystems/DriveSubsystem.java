@@ -1,5 +1,6 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -16,5 +17,11 @@ public class DriveSubsystem extends SubsystemBase {
     }
     public void arcadeDrive(double fwd, double rot) {
         m_diffdrive.arcadeDrive(fwd, rot);
+    }
+    public void arcadeDrive(GenericHID m_stick) {
+        m_diffdrive.arcadeDrive(
+            m_stick.getY(GenericHID.Hand.kLeft),
+            m_stick.getX(GenericHID.Hand.kLeft)
+        );
     }
 }
