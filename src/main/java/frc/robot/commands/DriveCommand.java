@@ -7,8 +7,8 @@ import frc.robot.subsystems.DriveSubsystem;
 public class DriveCommand extends CommandBase {
     private final DriveSubsystem m_subsystem;
     private final GenericHID m_stick;
-    private final double fwd;
-    private final double rot;
+    private double fwd;
+    private double rot;
 
     public DriveCommand(DriveSubsystem subsystem, GenericHID stick) {
         m_subsystem = subsystem;
